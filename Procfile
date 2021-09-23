@@ -1,3 +1,4 @@
-release: python manage.py makemigrations --no-input
-release: python manage.py migrate --no-input
-web: gunicorn users.wsgi
+release: python booktook/manage.py makemigrations --no-input
+release: python booktook/manage.py migrate --no-input
+release: python booktook/manage.py collectstatic --noinput
+web: gunicorn booktook.wsgi
